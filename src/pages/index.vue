@@ -1,26 +1,27 @@
 <template>
-  <div class="index">
-    <div class="text">
-      hello
-    </div>
+  <div id="main">
+    {{msg}}-{{getMessage}}
   </div>
 </template>
 
 <script>
 export default {
-  name: 'index',
-  data () {
+  name:'index',
+  data(){
     return {
-      
+    msg:'thanks'
+    }
+  },
+  computed:{
+    getMessage(){
+      return this.$store.getters.getMessage
     }
   }
 }
 </script>
 
-<style scoped lang='less'>
-  .index{
-    .text{
-      color: red
-    }
+<style lang='less' scoped>
+  #main{
+    color: aqua;
   }
 </style>

@@ -1,14 +1,8 @@
-let baseURL = 'http://www.默认地址.com'
+let baseURL=''
 switch(process.env.NODE_ENV){
-  case 'development':
-    baseURL = 'http://www.development.com'
-    break;
-  case 'production':
-    baseURL = 'http://www.production.com'
-    break;
-  case 'integration':
-    baseURL = 'http://www.integration.com'
-    break;
+  case 'prod':
+  baseURL = 'your URL'
+  break
 }
 export default {
   baseURL,
