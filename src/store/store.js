@@ -8,9 +8,6 @@ export default new Vuex.Store({
   mutations: {
   },
   actions:{
-    // setUserArr({commit}){
-    //   commit('setUserArr',e)
-    // }
   },
   getters: {
     getMessage(state){

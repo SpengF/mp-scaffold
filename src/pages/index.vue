@@ -22,6 +22,6 @@ export default {
 
 <style lang='less' scoped>
   #main{
-    color: aqua;
+    color: green;
   }
 </style>
