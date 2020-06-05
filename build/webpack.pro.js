@@ -24,7 +24,6 @@ const pro={
         chunk:{
           test: /[\\/]node_modules[\\/]/,
           priority: -10,
-          // name:'aaa.js'  //写filename异步打包报错
         },
         default:false
       }
@@ -39,7 +38,12 @@ const pro={
       {
         test:/\.css$/,
         sideEffects: true,
-        use:[MiniCssExtractPlugin.loader,'css-loader','postcss-loader']
+        use:[{
+          loader:MiniCssExtractPlugin.loader,
+          options:{
+            publicPath: '../'
+          }
+        },'css-loader','postcss-loader']
       },
       {
         test:/\.less$/,
