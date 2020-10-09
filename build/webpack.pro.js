@@ -1,4 +1,6 @@
 const merge=require('webpack-merge')
+const path = require('path')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -14,7 +16,18 @@ const pro={
     new TerserJSPlugin({
       extractComments:false
     }),
-    new OptimizeCSSAssetsPlugin()
+    new OptimizeCSSAssetsPlugin(),
+    new CopyWebpackPlugin({
+      patterns:[
+        {
+          from: path.resolve(__dirname, '../static'),
+          to: 'static',
+          globOptions:{
+            ignore:['**/.*']
+          }
+        }
+      ]
+    }),
   ],
   optimization: {
     splitChunks:{
